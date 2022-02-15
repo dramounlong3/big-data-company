@@ -92,7 +92,8 @@
     //取資料
     async function getsData() {
       //藉由server取資料避開跨域請求問題
-      await fetch("https://dramounlong3.herokuapp.com/getData")
+      //await fetch("https://dramounlong3.herokuapp.com/getData")
+      await fetch("http://localhost:8000/getData")
         .then((response) => {
           response.text().then(async (population) => {
             preData = await JSON.parse(population);
