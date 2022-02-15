@@ -24,17 +24,21 @@ app.get("/getData", (req, res) => {
     fetch(
       //"https://od.moi.gov.tw/api/v1/rest/datastore/301000000A-000082-045"
       "https://data.moi.gov.tw/MoiOD/System/DownloadFile.aspx?DATA=99D563D2-568C-4FA2-B4B0-1783453B1136"
-    ).then((response) => {
-      response
-        .text()
-        .then((population) => {
-          //console.log(population);
-          res.send(population);
-        })
-        .catch((e) => {
-          console.log(e.response);
-        });
-    });
+    )
+      .then((response) => {
+        response
+          .text()
+          .then((population) => {
+            //console.log(population);
+            res.send(population);
+          })
+          .catch((e) => {
+            console.log(e.response);
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
   getData();
 });
