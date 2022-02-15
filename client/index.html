@@ -352,7 +352,9 @@
         .enter()
         .append("text")
         .attr("x", (d, i) => {
-          return barValue[i] + rectGelementTransform[i] * 1.05;
+          return (
+            barValue[i] + rectGelementTransform[i] + xSubgroup.bandwidth() / 3.5
+          );
         })
         .attr("y", (d) => yScale(d) - 5)
         .style("fill", "red")
