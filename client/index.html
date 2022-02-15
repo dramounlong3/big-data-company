@@ -96,11 +96,13 @@
         //await fetch("http://localhost:8000/getData")
         .then((response) => {
           response.text().then(async (population) => {
-            preData = await JSON.parse(population);
+            let tempData = await JSON.parse(population);
+            preData = tempData.responseData;
 
             //篩選所有臺北市資料
             let taipeiDistrictData;
-            taipeiDistrictData = preData.result.records.filter((element) => {
+            //taipeiDistrictData = preData.result.records.filter((element) => {
+            taipeiDistrictData = preData.filter((element) => {
               return element.site_id.substring(0, 3) === "臺北市";
             });
 

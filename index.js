@@ -28,7 +28,7 @@ app.get("/getData", (req, res) => {
       response
         .text()
         .then((population) => {
-          console.log(population);
+          //console.log(population);
           res.send(population);
         })
         .catch((e) => {
