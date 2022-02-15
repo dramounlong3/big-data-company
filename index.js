@@ -6,9 +6,9 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
-app.use(express.static("client/css"));
-app.use(cors());
 
+app.use(cors());
+app.use(express.static("client"));
 //port 號會由 Heroku 給予，因此不再自行指定
 const port = process.env.PORT || 8000;
 
